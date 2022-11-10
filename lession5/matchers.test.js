@@ -114,9 +114,10 @@ test('toThrow', function () {
 
 
 // 命令行工具：
+// Press a to run all tests. 运行所有文件的测试用例 jest --watchAll 默认进入o模式
 // Press f to run only failed tests. 只运行报错的测试用例
-// Press o to only run tests related to changed files. 只运行和当前所改变文件相关的测试用例（使用此命令必须用git管理仓库代码）
-// Press p to filter by a filename regex pattern.
-// Press t to filter by a test name regex pattern.
-// Press q to quit watch mode.
-// Press Enter to trigger a test run.
+// Press o to only run tests related to changed files. 只运行和当前所改变文件相关的测试用例（使用此命令必须用git管理仓库代码）jest --watch 默认进入o模式
+// Press p to filter by a filename regex pattern.根据测试用例文件名称的正则表达式筛选要执行的测试用例（jest --watchAll时p模式才存在）
+// Press t to filter by a test name regex pattern.根据测试用例名称的正则表达式筛选要执行的测试用例
+// Press q to quit watch mode. 退出对代码的监控
+// Press Enter to trigger a test run.执行测试用例
