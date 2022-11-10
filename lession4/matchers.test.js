@@ -45,9 +45,69 @@ test('toBeFalsy 匹配器', function () {
 })
 
 // not匹配器
-test('toBeFalsy 匹配器', function () {
+test('not匹配器', function () {
   const a = 1
   expect(a).not.toBeFalsy()
   const b = 0
   expect(b).not.toBeTruthy()
+})
+
+// 数字相关的匹配器
+test('toBeGreaterThan', function () {
+  const a = 10
+  expect(a).toBeGreaterThan(2)
+})
+
+// 数字相关的匹配器
+test('toBeLessThan', function () {
+  const a = 10
+  expect(a).toBeLessThan(20)
+})
+
+// 数字相关的匹配器
+test('toBeGreaterThanOrEqual', function () {
+  const a = 10
+  expect(a).toBeGreaterThanOrEqual(10)
+})
+
+// 数字相关的匹配器
+test('toBeLessThanOrEqual', function () {
+  const a = 10
+  expect(a).toBeLessThanOrEqual(10)
+})
+
+// 浮点数字相关的匹配器
+test('toBeCloseTo', function () {
+  const a = 0.1
+  const b = 0.2
+  expect(a + b).toBeCloseTo(0.3)
+})
+
+// 字符串相关的匹配器
+test('toMatch', function () {
+  const str = "http://xiaoxiekeke.com"
+  expect(str).toMatch(/xiaoxiekeke/)//可以匹配正则
+  expect(str).toMatch("xiaoxiekeke")
+})
+
+// Array Set相关的匹配器
+test('toContain', function () {
+  const arr = ["aaa", "bbb", "ccc"]
+  const set = new Set(arr)
+  expect(arr).toContain("aaa")
+  expect(set).toContain("bbb")
+})
+
+const throwErrorFunction = () => {
+  throw new Error("this is a new error")
+}
+// 异常相关的匹配器
+test('toThrow', function () {
+  expect(throwErrorFunction).toThrow()
+  expect(throwErrorFunction).toThrow("this is a new error")
+  expect(throwErrorFunction).toThrow(/this is a new error/) //支持正则
+  // 不通过
+  // expect(throwErrorFunction).toThrow("this is a old error")
+  // 不通过
+  // expect(throwErrorFunction).not.toThrow()
 })
