@@ -1,3 +1,5 @@
+// jest 命令行
+
 test('测试10与10相匹配', function () {
   // toBe 匹配器 matchers 
   // 类似 Object.is ===
