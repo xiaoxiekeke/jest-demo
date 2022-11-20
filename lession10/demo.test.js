@@ -12,7 +12,7 @@ import { fetchData } from "./demo";
 const { getNumber } = jest.requireActual("./demo")
 
 
-// 使用__mocks__文件夹下的fetchData来模拟测试方法
+// 使用__mocks__文件夹下的fetchData来模拟测试方法，这样可以避免接口调用的过程，提高效率
 test("fetchData 测试", () => {
   return fetchData().then(data => {
     expect(eval(data)).toBe(123)
