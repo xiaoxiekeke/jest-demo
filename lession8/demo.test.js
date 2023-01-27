@@ -77,7 +77,7 @@ test('测试 通过mockReturnValueOnce、mockReturnValue 方法mock 返回值', 
 
 test('测试 Mock函数用作构造函数，则mock.instances中有值', () => {
   const func = jest.fn()
-  createObject(func)
+  const obj = createObject(func)
   console.log(func.mock)
   expect(func.mock.calls.length).toBe(1)
 })
